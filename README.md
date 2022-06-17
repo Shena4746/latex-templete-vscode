@@ -1,7 +1,11 @@
 # What's this?
 
-VSCodeでTeXを書くときの`.vscode`フォルダのバックアップ.
-docmute パッケージ等を使ってファイル分割して書く用の雛形.
+VSCode で TeX を書くときのディレクトリのバックアップ.
+
+- docmute パッケージ等を使ってファイル分割して書く用の雛形
+- `.sty` 達
+- プロジェクトに置く`.vscode`フォルダ
+- TeX 用のスニペット
 
 ## settings.json
 
