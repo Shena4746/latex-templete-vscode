@@ -11,3 +11,6 @@
 *.toc
 # ignore .history directory that is created by vscode extension
 /.history/
+# ignore all pdf except the master file named RKHS-for-ML.pfd
+*.pdf
+!/.pdf/RKHS-for-ML.pdf
