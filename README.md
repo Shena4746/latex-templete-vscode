@@ -11,6 +11,10 @@ VSCode で TeX を書くときのディレクトリのバックアップ.
 
 latex 環境構築用の最小限の設定が書いてあるだけ. tex フォルダで書くと pdf フォルダに出力される.
 
+## .chktexrc
+
+chktex(TeX 用の Linter 的なもの)実行時に与えるオプションを設定できる. たとえば, 12番と13番のエラーを表示しないようにするには`-n12 -n13`とする.
+
 ## .code-snippets
 
 `latex.code-snippets` はプロジェクトディレクトリにスコープを持つローカルなUser-defined-Snippets. グローバルなUser-defined-Snippetsと同様に書かれて同様に動作する. `.tex` ファイルだけでなく `.sty` ファイルにも効くっぽい.

@@ -17,6 +17,7 @@
 		"editor.tabSize": 2
 	},
 	// ---------- LaTeX Workshop ----------
+	"latex-workshop.bibtex-format.sort.enabled": true,
 	"latex-workshop.chktex.enabled": true,
 	"latex-workshop.latex.autoBuild.run": "onSave",
 	"latex-workshop.intellisense.package.enabled": true,
@@ -81,4 +82,12 @@
 			],
 		},
 	],
+	"cSpell.customDictionaries": {
+		"custom-dictionary-workspace": {
+			"name": "custom-dictionary-workspace",
+			"path": "${workspaceFolder}/.cspell/custom-dictionary-workspace.txt",
+			"addWords": true,
+			"scope": "workspace"
+		}
+	},
 }
