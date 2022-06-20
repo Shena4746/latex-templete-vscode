@@ -6,6 +6,8 @@ VSCode で TeX を書くとき備忘録兼テンプレ.
 
 - `/.vscode`: latex-workshop 拡張機能の設定等
 - `/.tex`: docmute 等を使ってファイル分割して書く用のテンプレート
+- `/.pdf`: `/.tex` の中身をビルドしたサンプル
+- `/.cspell`: Code Spell Checker 拡張機能用のホワイトリスト
 - `.chktexrc`: TeX 用 Linter chktex のオプション指定
 
 ## .vscode
