@@ -14,3 +14,5 @@
 # ignore all pdf except the master file
 /.pdf/*.pdf
 !/.pdf/master.pdf
+# just for example
+!/.pdf/write-japanese.pdf

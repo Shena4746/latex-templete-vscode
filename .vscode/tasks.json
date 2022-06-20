@@ -4,7 +4,7 @@
 		{
 			"label": "Remove Intermediate Tex Files",
 			"type": "shell",
-			"command": "fd -HI -e aux -e dvi -e fls -e out -e gz -e fdb_latexmk -e log -e toc -e blg -e bbl -t f | xargs rm -rf",
+			"command": "fd -HI -e aux -e dvi -e fls -e out -e gz -e fdb_latexmk -e log -e toc -e blg -e bbl -e nav -e snm -t f | xargs rm -rf",
 			"presentation": {
 				"reveal": "silent",
 				"revealProblems": "onProblem",

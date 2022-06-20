@@ -21,12 +21,11 @@
 	"latex-workshop.chktex.enabled": true,
 	"latex-workshop.latex.autoBuild.run": "onSave",
 	"latex-workshop.intellisense.package.enabled": true,
-	"latex-workshop.latexindent.path": "/usr/bin/latexindent",
-	// Specify output directory 
+	// Specify output directory. Manually include "-outdir=%OUTDIR%" in args of latex-workshop.latex.tools
 	"latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/.pdf",
 	"latex-workshop.latex.autoClean.run": "onBuilt",
 	"latex-workshop.latex.clean.subfolder.enabled": true,
-	// "grob": by latex-workshop, "claenComman": some other tool
+	// "glob": by latex-workshop, "claenComman": by some other tool
 	"latex-workshop.latex.clean.method": "glob",
 	// if you choose "clean command", specify commands to be run
 	//"latex-workshop.latex.clean.command": "latexmk",
@@ -61,16 +60,42 @@
 		"*.dvi",
 		"*.synctex.gz" // added to defaults
 	],
+	// recipe for build in English
+	// "latex-workshop.latex.recipes": [
+	// 	{
+	// 		"name": "latexmk",
+	// 		"tools": [
+	// 			"latexmk"
+	// 		]
+	// 	},
+	// ],
+	// recipe for build for English
+	// much faster than LuaLaTeX.
+	// "latex-workshop.latex.recipes": [
+	// 	{
+	// 		"name": "latexmk-English",
+	// 		"tools": [
+	// 			"latexmk" // default latex is pdflatex (for English)
+	// 		]
+	// 	},
+	// ],
 	// recipe for build
+	// "latex-workshop.latex.recipe.default": "latexmk-English",
+	"latex-workshop.latex.recipe.default": "latexmk-LuaLaTeX", // works also for Jpanese
 	"latex-workshop.latex.recipes": [
 		{
-			"name": "latexmk",
+			"name": "latexmk-LuaLaTeX",
 			"tools": [
-				"latexmk"
+				"latexmk-LuaLaTeX"
+			]
+		},
+		{
+			"name": "latexmk-English",
+			"tools": [
+				"latexmk" // default latex of latexmk is pdflatex (for English only)
 			]
 		},
 	],
-	// tools used for build
 	"latex-workshop.latex.tools": [
 		{
 			"name": "latexmk",
@@ -81,7 +106,28 @@
 				"%DOC%"
 			],
 		},
+		{
+			"name": "latexmk-LuaLaTeX",
+			"command": "latexmk",
+			"args": [
+				"-e",
+				"$lualatex=q/lualatex %O -synctex=1 -interaction=nonstopmode -file-line-error %S/",
+				"-e",
+				"$bibtex=q/upbibtex %O %B/",
+				"-e",
+				"$biber=q/biber %O --bblencoding=utf8 -u -U --output_safechars %B/",
+				"-e",
+				"$makeindex=q/upmendex %O -o %D %S/",
+				"-norc",
+				"-gg",
+				"-pdflua",
+				"-outdir=%OUTDIR%",
+				"%DOC%"
+			],
+			"env": {}
+		}
 	],
+	// spell checker
 	"cSpell.customDictionaries": {
 		"custom-dictionary-workspace": {
 			"name": "custom-dictionary-workspace",
